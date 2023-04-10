@@ -258,12 +258,3 @@ reachBF <- function(M, max_guess) {
   }
   return(min(guess, max_guess))
 }
-
-
-#' REFERENCES
-#'
-#' Ryan Cotsakis, Elena Di Bernardino, Thomas Opitz. On the perimeter estimation
-#' of pixelated excursion sets of 2D anisotropic random fields. 2022. hal-03582844v2
-#' 
-#' Ryan Cotsakis. Identifying the reach from high-dimensional point cloud data with
-#' connections to r-convexity. 2022. hal-03854575

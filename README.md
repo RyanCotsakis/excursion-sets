@@ -8,7 +8,9 @@ This repository contains a set of functions for analyzing binary and continuous 
 
 ### References
 The functions in this repository are based on research by Ryan Cotsakis, Elena Di Bernardino, and Thomas Opitz. The following references are used to construct the functions:
-- Ryan Cotsakis, Elena Di Bernardino, Thomas Opitz. On the perimeter estimation of pixelated excursion sets of 2D anisotropic random fields. 2022. [hal-03582844v2](https://hal.science/hal-03582844v2).
+
+- Hermine Biermé, H. and Agnès Desolneux. The effect of discretization on the mean geometry of a 2D random field. 2021. Annales Henri Lebesgue **4** 1295–1345
+- Ryan Cotsakis, Elena Di Bernardino, and Thomas Opitz. On the perimeter estimation of pixelated excursion sets of 2D anisotropic random fields. 2022. [hal-03582844v2](https://hal.science/hal-03582844v2).
 - Ryan Cotsakis. Identifying the reach from high-dimensional point cloud data with connections to r-convexity. 2022. [hal-03854575](https://hal.science/hal-03854575v1).
 
 Please cite these references if you use the functions in your work.
