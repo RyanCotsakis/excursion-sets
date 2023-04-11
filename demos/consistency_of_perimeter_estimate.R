@@ -1,7 +1,7 @@
-# Recreates Figure 7 in Cotsakis et al. (2022)
+# Recreates Figures 7 and 9 in Cotsakis et al. (2022)
 
 # PARAMETERS
-anisoropy = 2 # The amount of anisotropy. Set to 1 for an isotropic model
+anisotropy = 2 # The amount of anisotropy. Set to 1 for an isotropic model
 u = 0.5 # Threshold level (Standard Gaussian quantile)
 sc = 0.2 # Domain has height and width 1/sc
 nu = 2.5 # Smoothness parameter > 0. Set to Inf for a Gaussian covariance function.
