@@ -55,8 +55,11 @@ p = ggplot(df, aes(x=m, color=as.factor(p))) +
   geom_point(aes(y=mae, shape=as.factor(p)),size=3) +
   scale_shape_manual(values=c(15, 16))+
   scale_color_manual("",values = c(3, 4)) +
-  theme(legend.position = "none") +
-  ylim(0, 1.6) +
+  theme(legend.position = "none",
+        axis.ticks=element_blank(),
+        panel.background=element_blank(),
+        panel.grid.major= element_line(colour = "lightgrey"),
+        panel.grid.minor=element_line(colour = "lightgrey")) +
   ylab("MAE") + xlab("n") + 
   geom_abline(slope=0,intercept = 0,color="red",alpha=0.4)
 p
