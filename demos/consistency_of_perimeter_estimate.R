@@ -16,15 +16,15 @@ ms = 2:16
 estimates = c()
 for (m in ms){
   N = floor(10*m^(3/2))
-  model <- RPgauss(RMmatern(nu = nu, scale = sc*N, var = 1, Aniso=A))
+  model <- RPgauss(RMmatern(nu = nu, scale = sc*(N-1), var = 1, Aniso=A))
   
   for (i in 1:N_sim){
     f <- RFsimulate(model, x=1:N, y=1:N)$variable1
     f = matrix(f,nrow=N)
     bf = f>u
-    estimates = rbind(estimates, c("Phat1"=perimBF(bf, p=1)/(N-1),
-                                   "Phat2"=perimBF(bf, box_size = m)/(N-1),
-                                   "truth"=perimCF(f,u)/(N-1),
+    estimates = rbind(estimates, c("Phat1"=perimBF(bf, p=1)/(N-1)/sc,
+                                   "Phat2"=perimBF(bf, box_size = m)/(N-1)/sc,
+                                   "truth"=perimCF(f,u)/(N-1)/sc,
                                    "m"=m))
     if(i %% 10 == 0){
       print(paste(i, "/", N_sim, "replications completed for n =", m))
@@ -40,9 +40,9 @@ for(m in ms){
   inds = which(estimates$m == m)
   if(length(inds) == 0) break
   
-  errors1 = abs(pi/4*estimates$Phat1[inds] - estimates$truth[inds])/sc
+  errors1 = abs(pi/4*estimates$Phat1[inds] - estimates$truth[inds])
   df = rbind(df, c(mean(errors1), m, 1))
-  errors2 = abs(estimates$Phat2[inds] - estimates$truth[inds])/sc
+  errors2 = abs(estimates$Phat2[inds] - estimates$truth[inds])
   df = rbind(df, c(mean(errors2), m, 2))
 }
 names(df) = c("mae", "m", "p")

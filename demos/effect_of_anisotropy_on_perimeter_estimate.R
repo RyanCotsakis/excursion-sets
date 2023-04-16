@@ -15,22 +15,22 @@ estimates = c()
 for (theta in seq(0,pi/2+0.001,pi/32)){
   U = matrix(c(cos(theta),sin(theta),-sin(theta),cos(theta)),ncol=2) # unitary matrix
   A = diag(sigma) %*% t(U)
-  model <- RPgauss(RMmatern(nu = nu, scale = sc*N, var = 1, Aniso=A))
+  model <- RPgauss(RMmatern(nu = nu, scale = sc*(N-1), var = 1, Aniso=A))
   
   for (i in 1:N_sim){
     f <- RFsimulate(model, x=1:N, y=1:N)$variable1
     f = matrix(f,nrow=N)
     bf = f>u
-    estimates = rbind(estimates, c("Phat1"=perimBF(bf, p=1)/(N-1),
-                                   "Phat2"=perimBF(bf, box_size = 8)/(N-1),
-                                   "truth"=perimCF(f,u)/(N-1),
+    estimates = rbind(estimates, c("Phat1"=perimBF(bf, p=1)/(N-1)/sc,
+                                   "Phat2"=perimBF(bf, box_size = 8)/(N-1)/sc,
+                                   "truth"=perimCF(f,u)/(N-1)/sc,
                                    "theta"=theta))
     if(i %% 10 == 0){
       print(paste(i, "/", N_sim, "replications completed for theta =", theta))
       imageBF(bf)
+      save(estimates, file="figure6.RData")
     }
   }
-  save(estimates, file="figure6.RData")
 }
 estimates = data.frame(estimates)
 
