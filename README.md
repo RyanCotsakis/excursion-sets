@@ -5,9 +5,9 @@ This repository contains a set of functions for analyzing binary and continuous 
 
 ### Demos
 - `demos/consistency_of_perimeter_estimate.R` recreates Figures 7 and 9 in Cotsakis et al. (2022), and shows how to estimate the perimeter of pixelated excursion sets of 2D anisotropic random fields.
+- `demos/effect_of_anisotropy_on_perimeter_estimate.R` recreates Figure 6 in Cotsakis et al. (2022)
 
 ### References
-The functions in this repository are based on research by Ryan Cotsakis, Elena Di Bernardino, and Thomas Opitz. The following references are used to construct the functions:
 
 - Hermine Biermé, H. and Agnès Desolneux. The effect of discretization on the mean geometry of a 2D random field. 2021. Annales Henri Lebesgue **4** 1295–1345
 - Ryan Cotsakis, Elena Di Bernardino, and Thomas Opitz. On the perimeter estimation of pixelated excursion sets of 2D anisotropic random fields. 2022. [hal-03582844v2](https://hal.science/hal-03582844v2).
