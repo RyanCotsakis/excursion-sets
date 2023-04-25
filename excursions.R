@@ -95,7 +95,7 @@ perimBF <- function(bf, p = 2, incl_boundary = FALSE, box_size = "auto"){
   } else if (box_size == "auto"){
     cc = ccBF(bf, connectivity = 8, incl_perim = FALSE, incl_area = FALSE)
     if (cc$ncc == 0) return(0)
-    bs = max(floor(0.42*(length(bf)/(cc$nholes + cc$ncc))^(1/3)), 1)
+    bs = max(floor((length(bf)/(cc$nholes + cc$ncc))^(1/3)/3), 1)
     per = cpp_perimeter_cotsakis(bf, bs)
   } else {
     per = cpp_perimeter_cotsakis(bf, box_size)
