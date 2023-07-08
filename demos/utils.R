@@ -1,9 +1,17 @@
 # Install necessary packages
 if (!is.element("RandomFieldsUtils", installed.packages()[, "Package"])){
-  install.packages("RandomFieldsUtils_0.5.3.tar.gz", repos = NULL, type = "source")
-}
-if (!is.element("RandomFields", installed.packages()[, "Package"])){
-  install.packages("RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
+  if (tolower(readline(
+    "'RandomFieldsUtils' and 'RandomFields' are not installed. Would you like to install them? [y/n]: "
+    )) == "y"){
+    install.packages("RandomFieldsUtils_0.5.3.tar.gz", repos = NULL, type = "source")
+    install.packages("RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
+  }
+} else if (!is.element("RandomFields", installed.packages()[, "Package"])){
+  if (tolower(readline(
+    "'RandomFields' is not installed. Would you like to install it? [y/n]: "
+    )) == "y"){
+    install.packages("RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
+  }
 }
 
 # compute the perimeter of an ellipse with major and minor axis (radii) a and b.
