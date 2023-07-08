@@ -3,14 +3,14 @@ if (!is.element("RandomFieldsUtils", installed.packages()[, "Package"])){
   if (tolower(readline(
     "'RandomFieldsUtils' and 'RandomFields' are not installed. Would you like to install them? [y/n]: "
     )) == "y"){
-    install.packages("RandomFieldsUtils_0.5.3.tar.gz", repos = NULL, type = "source")
-    install.packages("RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
+    install.packages("https://cran.r-project.org/src/contrib/Archive/RandomFieldsUtils/RandomFieldsUtils_0.5.3.tar.gz", repos = NULL, type = "source")
+    install.packages("https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
   }
 } else if (!is.element("RandomFields", installed.packages()[, "Package"])){
   if (tolower(readline(
     "'RandomFields' is not installed. Would you like to install it? [y/n]: "
     )) == "y"){
-    install.packages("RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
+    install.packages("https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
   }
 }
 
