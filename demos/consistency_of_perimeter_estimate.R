@@ -1,5 +1,11 @@
 # Recreates Figures 7 and 9 in Cotsakis et al. (2022)
 
+# setwd("path/to/excursion-sets")
+
+source("excursions.R")
+source("demos/utils.R")
+library(RandomFields)
+
 # PARAMETERS
 anisotropy = 2 # The amount of anisotropy. Set to 1 for an isotropic model
 u = 0.5 # Threshold level (Standard Gaussian quantile)
@@ -7,10 +13,6 @@ sc = 0.2 # Domain has height and width 1/sc
 nu = 2.5 # Smoothness parameter > 0 of the Matern covariance function. Set to Inf for a Gaussian covariance function.
 N_sim = 50 # Number of simulations per value of n. 500 in the original paper
 
-
-# Generate the random fields and compute the excursion perimeters
-source("excursions.R")
-library(RandomFields)
 A = diag(c(1/anisotropy, anisotropy))
 ms = 2:16
 estimates = c()

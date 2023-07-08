@@ -1,7 +1,9 @@
 # Recreates Figure 6 in Cotsakis et al. (2022)
 
-# Generate the random fields and compute the excursion perimeters
+# setwd("path/to/excursion-sets")
+
 source("excursions.R")
+source("demos/utils.R")
 library(RandomFields)
 
 N = 256 # the height and width of the image measured in pixels
@@ -45,7 +47,6 @@ for(theta in thetas){
 names(df) = names(estimates)
 
 # plotting
-source("demos/utils.R")
 library(ggplot2)
 expect = c1star(diag(sigma), u, nu)*2/sc^2
 labels = c("0",

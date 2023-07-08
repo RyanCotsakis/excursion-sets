@@ -1,3 +1,11 @@
+# Install necessary packages
+if (!is.element("RandomFieldsUtils", installed.packages()[, "Package"])){
+  install.packages("RandomFieldsUtils_0.5.3.tar.gz", repos = NULL, type = "source")
+}
+if (!is.element("RandomFields", installed.packages()[, "Package"])){
+  install.packages("RandomFields_3.3.8.tar.gz", repos = NULL, type = "source")
+}
+
 # compute the perimeter of an ellipse with major and minor axis (radii) a and b.
 ellipse = function(a, b){
   r = ((a-b)/(a+b))^2
